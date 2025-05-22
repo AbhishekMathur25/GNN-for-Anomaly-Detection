@@ -1,3 +1,7 @@
+GNN-Based Anomaly Detection in Telecommunications Data
+An advanced, end-to-end pipeline for detecting anomalies in mobile network user behavior using Graph Neural Networks (GNNs), traditional machine learning, and graph-based statistics.
+
+
 This repository implements a graph-based anomaly detection system tailored for telecom datasets containing per-user session and network activity. It combines GNN autoencoders, Isolation Forests, and statistical graph methods to detect abnormal MSISDN behavior across thousands of features and sessions.
 
 Core Components:-
