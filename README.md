@@ -46,3 +46,11 @@ Euclidean & Manhattan distance
 Local density score
 
 Aggregated score compared to 95th percentile threshold
+
+Overall Anomaly Statistics
+Each method identified 5 anomalies, corresponding to an anomaly rate of 5% across the dataset.
+
+Method          	Anomalies	  Anomaly Rate	  Threshold (95th Percentile)
+GNN AutoEncoder	  5	          5.0%	          1.89
+Isolation Forest	5	          5.0%	          0.60
+Statistical Graph	5	          5.0%	          13.06
