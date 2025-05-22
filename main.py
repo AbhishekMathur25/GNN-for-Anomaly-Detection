@@ -611,7 +611,7 @@ def generate_comprehensive_anomaly_report(detector, methods_results):
     print("="*80)
     
     # Dataset Summary
-    print(f"\n📊 DATASET SUMMARY")
+    print(f"\n DATASET SUMMARY")
     print(f"{'─'*50}")
     print(f"Total Records: {len(detector.processed_data):,}")
     print(f"Features Used: {len(detector.feature_columns)}")
@@ -632,7 +632,7 @@ def generate_comprehensive_anomaly_report(detector, methods_results):
               f"{threshold:<15.4f} {np.min(scores):.3f} - {np.max(scores):.3f}")
     
     # Detailed Performance Metrics
-    print(f"\n📈 DETAILED PERFORMANCE METRICS")
+    print(f"\n DETAILED PERFORMANCE METRICS")
     print(f"{'─'*50}")
     
     for method, metrics in detector.performance_metrics.items():
@@ -646,7 +646,7 @@ def generate_comprehensive_anomaly_report(detector, methods_results):
         print(f"    Quartiles: Q1={stats['q25']:.4f}, Q2={stats['median']:.4f}, Q3={stats['q75']:.4f}")
     
     # Anomaly Analysis by Features
-    print(f"\n🎯 ANOMALY ANALYSIS BY FEATURES")
+    print(f"\n ANOMALY ANALYSIS BY FEATURES")
     print(f"{'─'*50}")
     
     # Combine all anomalies for analysis
@@ -674,7 +674,7 @@ def generate_comprehensive_anomaly_report(detector, methods_results):
                 print(f"{feature:<25} {anomaly_mean:<15.2f} {normal_mean:<15.2f} {difference:<15.2f}")
     
     # Consensus Analysis
-    print(f"\n🤝 CONSENSUS ANOMALY ANALYSIS")
+    print(f"\n CONSENSUS ANOMALY ANALYSIS")
     print(f"{'─'*50}")
     
     # Count how many methods detected each record as anomaly
@@ -705,7 +705,7 @@ def generate_comprehensive_anomaly_report(detector, methods_results):
         print(high_conf_data[display_cols].head(10).to_string(index=False))
     
     # Customer Analysis
-    print(f"\n👥 CUSTOMER-BASED ANOMALY ANALYSIS")
+    print(f"\n CUSTOMER-BASED ANOMALY ANALYSIS")
     print(f"{'─'*50}")
     
     if all_anomaly_indices:
@@ -720,7 +720,7 @@ def generate_comprehensive_anomaly_report(detector, methods_results):
                 print(f"  Customer {customer}: {count} anomalous records")
     
     # Time-based Analysis
-    print(f"\n📅 TEMPORAL ANOMALY ANALYSIS")
+    print(f"\n TEMPORAL ANOMALY ANALYSIS")
     print(f"{'─'*50}")
     
     if all_anomaly_indices:
@@ -733,7 +733,7 @@ def generate_comprehensive_anomaly_report(detector, methods_results):
             print(f"  {date}: {count} anomalies")
     
     # Technology Usage Anomalies
-    print(f"\n📡 TECHNOLOGY USAGE ANOMALY PATTERNS")
+    print(f"\n TECHNOLOGY USAGE ANOMALY PATTERNS")
     print(f"{'─'*50}")
     
     if all_anomaly_indices:
@@ -765,7 +765,7 @@ def generate_comprehensive_anomaly_report(detector, methods_results):
         'timestamp': datetime.now().isoformat()
     }
     
-    print(f"\n✅ Report generated successfully!")
+    print(f"\n Report generated successfully!")
     return detector.anomaly_report
 
 def visualize_comprehensive_results(detector, methods_results):
@@ -899,7 +899,7 @@ def generate_prediction_report(detector, results):
     """
     Generate report for predictions on new data
     """
-    print(f"\n📋 PREDICTION REPORT ON NEW DATA")
+    print(f"\n PREDICTION REPORT ON NEW DATA")
     print(f"{'='*60}")
     print(f"Dataset: {detector.data_path}")
     print(f"Records processed: {len(detector.processed_data):,}")
@@ -921,7 +921,7 @@ def generate_prediction_report(detector, results):
         all_anomaly_indices.update(anomaly_indices)
     
     if all_anomaly_indices:
-        print(f"\n🚨 HIGH-RISK RECORDS")
+        print(f"\n HIGH-RISK RECORDS")
         print(f"{'─'*30}")
         high_risk_data = detector.processed_data.iloc[list(all_anomaly_indices)]
         print(f"Records flagged: {len(high_risk_data):,}")
@@ -1050,7 +1050,7 @@ TelecomGNNAnomalyDetector._predict_statistical_graph = _predict_statistical_grap
 # Main execution with enhanced functionality
 if __name__ == "__main__":
     print("="*100)
-    print("🚀 ADVANCED GNN-based ANOMALY DETECTION for TELECOMMUNICATIONS DATA")
+    print(" ADVANCED GNN-based ANOMALY DETECTION for TELECOMMUNICATIONS DATA")
     print("="*100)
     
     # Initialize detector
@@ -1063,29 +1063,29 @@ if __name__ == "__main__":
     detector.create_graph_structure(similarity_threshold=0.7)
     
     # Run anomaly detection methods
-    print("\n🔄 Running anomaly detection methods...")
+    print("\n Running anomaly detection methods...")
     results = run_anomaly_detection_methods(detector)
     
     # Generate comprehensive report
-    print("\n📊 Generating comprehensive anomaly report...")
+    print("\n Generating comprehensive anomaly report...")
     anomaly_report = generate_comprehensive_anomaly_report(detector, results)
     
     # Visualize results
-    print("\n📈 Creating visualizations...")
+    print("\n Creating visualizations...")
     visualize_comprehensive_results(detector, results)
     
     # Save trained model
-    print("\n💾 Saving trained models...")
+    print("\n Saving trained models...")
     model_path = detector.save_model()
-    print(f"✅ Models saved to: {model_path}.pkl")
+    print(f" Models saved to: {model_path}.pkl")
     
-    print(f"\n📋 FINAL SUMMARY:")
+    print(f"\n FINAL SUMMARY:")
     print(f"  - Total records analyzed: {len(detector.processed_data):,}")
     print(f"  - Methods used: {len(results)}")
     print(f"  - High-confidence anomalies: {anomaly_report['high_confidence_anomalies']:,}")
     print(f"  - Model ready for production use!")
     
-    print(f"\n💡 To use this model on new data:")
+    print(f"\n To use this model on new data:")
     print(f"  1. Initialize: detector = TelecomGNNAnomalyDetector()")
     print(f"  2. Load model: detector.load_model('{model_path}.pkl')")
     print(f"  3. Predict: results, report = detector.predict_new_data('new_data.csv')")
