@@ -1,0 +1,47 @@
+{
+  "GNN_AutoEncoder": {
+    "threshold": 1.8942164182662964,
+    "num_anomalies": 5,
+    "anomaly_rate": 5.0,
+    "threshold_percentile": 95,
+    "score_statistics": {
+      "mean": 0.7056374549865723,
+      "std": 0.7113052010536194,
+      "min": 0.15230686962604523,
+      "max": 4.241024017333984,
+      "median": 0.5202747583389282,
+      "q25": 0.32881277799606323,
+      "q75": 0.7359334230422974
+    }
+  },
+  "Isolation_Forest": {
+    "threshold": 0.5968592324011383,
+    "num_anomalies": 5,
+    "anomaly_rate": 5.0,
+    "threshold_percentile": 95,
+    "score_statistics": {
+      "mean": 0.5119872433562471,
+      "std": 0.04748983375999966,
+      "min": 0.445065569934511,
+      "max": 0.6885140005936922,
+      "median": 0.5030075112745256,
+      "q25": 0.4767239737347797,
+      "q75": 0.5323116495227065
+    }
+  },
+  "Statistical_Graph": {
+    "threshold": 13.057441711425781,
+    "num_anomalies": 5,
+    "anomaly_rate": 5.0,
+    "threshold_percentile": 95,
+    "score_statistics": {
+      "mean": 7.909146785736084,
+      "std": 2.9330313205718994,
+      "min": 3.318263292312622,
+      "max": 26.57332420349121,
+      "median": 7.1271257400512695,
+      "q25": 6.436079502105713,
+      "q75": 8.481646537780762
+    }
+  }
+}
